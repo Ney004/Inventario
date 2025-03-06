@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
+    <body>
+        
+        <div class="background">
+            <img class="logo" src="./assets/LogoU.png" alt="FUNLAM">
+        </div>
+        <div class="centering">
+        
+            <form class="my-form">
+                
+                <!-- Logo y título -->
+                <div class="login-welcome-row">
+                    <img class="login-welcome" src="./assets/Avatar.png" alt="avatar">
+                    <h1>Laboratorio de Psicología</h1>
+                </div>
+                
+                <!-- Botón de Google Sign-In -->
+                <div id="g_id_onload"
+                    data-client_id="218301923381-dtp2ql9k479r4aouuv6ope37ntf16kse.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse">
+                </div>
+                <div class="g_id_signin" data-type="standard"></div>
+            </form>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
