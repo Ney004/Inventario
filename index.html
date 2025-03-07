@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="index_style.css">
-    <link rel="stylesheet" href="./assets/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="index_menu.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Aqui va el menu</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi sed vero sunt, doloribus ex nihil at. Illo culpa nisi aperiam exercitationem, saepe tempore qui earum optio ab sapiente repellat. Nesciunt?</p>
+    <div class="navbar">
+        <nav>
+            <!--Navbar-->
+            <img class="logo" src="./assets/simbolo.png" alt="FUNLAM">
+            <ul>
+                <li><a href="#">Usuario</a></li>
+            </ul>
+            <img class="usuario" src="./assets/Avatar.png" onclick="toggleMenu()">
+
+            <!--Dropdown-->
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="./assets/Avatar.png">
+                        <h3> nombre </h3>
+                    </div>
+                    <hr>
+
+                    <button class="sub-menu-button">
+                        <p>Cerrar sesion</p>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script src="./index.js"></script>
 </body>
 </html>
