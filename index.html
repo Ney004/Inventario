@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title> Inicio </title>
     <link rel="stylesheet" href="index_style.css">
-    <link rel="stylesheet" href="index_menu.js">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <!--Navbar-->
-            <img class="logo" src="./assets/simbolo.png" alt="FUNLAM">
-            <ul>
-                <li><a href="#">Usuario</a></li>
-            </ul>
-            <img class="usuario" src="./assets/Avatar.png" onclick="toggleMenu()">
-
-            <!--Dropdown-->
+    <header>
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand">
+                <img class="logo" src="./assets/simbolo.png">
+                <span class="name"> Laboratorio de Psicología </span>
+            </div>
+        </div>
+        <div class="right">
+            
+            <img calss="user" src="./assets/astronaut.jpg" onclick="toggleMenu()">
+            
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
@@ -34,8 +38,63 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <!--SIDEBAR-->
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="selected">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/home.svg" alt="">
+                        <span> Inicio </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/add.svg" alt="">
+                        <span> Agregar </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/megaphone.svg" alt="">
+                        <span> Marketing </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/money.svg" alt="">
+                        <span> Ventas </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/wallet.svg" alt="">
+                        <span> Cartera </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/chart.svg" alt="">
+                        <span> Informes </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons-sidebar-navbar-main/icons/tools.svg" alt="">
+                        <span> Herramientas </span>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
-    <script src="./index.js"></script>
+
+    <main id="main">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a ipsum tempora laudantium ipsam fuga, illo dolor reiciendis labore rerum. Fugit nostrum vitae ut facilis. Cupiditate, autem dolores. Velit, ut!
+    </main>
+
+    <script src="./index_script.js"></script>
 </body>
 </html>
