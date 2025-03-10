@@ -8,14 +8,15 @@
 }
 
 .logo {
-    width: 470px;
-    height: 105px;
+    width: 100%; /* O un porcentaje menor según sea necesario */
+    max-width: 470px; /* Evita que crezca demasiado */
+    height: auto; /* Mantiene la proporción */
     display: block;
     margin: 0 auto;
     position: absolute;
     top: 5vh;
     transform: scale(0.8);
-    background-color: transparent;
+    background-color: transparent; 
 }
 
 * {
@@ -29,8 +30,7 @@
 h1 {
     color: var(--primary);
     background-color: var(--secondary);
-    font-size: clamp(24px, 2vw, 64px);
-
+    font-size: clamp(1rem, 5vw, 2rem);
 }
 
 .background {

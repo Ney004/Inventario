@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index_style.css">
 </head>
 <body>
+    <!--NABVAR-->
     <header>
         <div class="left">
             <div class="menu-container">
@@ -22,9 +23,7 @@
             </div>
         </div>
         <div class="right">
-            
-            <img calss="user" src="./assets/astronaut.jpg" onclick="toggleMenu()">
-            
+            <img class="user" src="./assets/Avatar.png" onclick="toggleMenu()">
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
@@ -33,7 +32,7 @@
                     </div>
                     <hr>
 
-                    <button class="sub-menu-button">
+                    <button class="sub-menu-button" id="logoutButton">
                         <p>Cerrar sesion</p>
                     </button>
                 </div>
@@ -46,45 +45,39 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" class="selected">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/home.svg" alt="">
+                    <a href="./Sidebar-options/inicio.html" class="selected" target="menu_options">
+                        <img src="./assets/icons/home.svg" alt="Inicio">
                         <span> Inicio </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/add.svg" alt="">
+                    <a href="./Sidebar-options/agregar.html" target="menu_options">
+                        <img src="./assets/icons/add.svg" alt="Agregar">
                         <span> Agregar </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/megaphone.svg" alt="">
-                        <span> Marketing </span>
+                    <a href="./Sidebar-options/inventario.html" target="menu_options">
+                        <img src="./assets/icons/box-svgrepo-com.svg" alt="Inventario">
+                        <span> Inventario </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/money.svg" alt="">
+                    <a href="./Sidebar-options/prestamo.html" target="menu_options">
+                        <img src="./assets/icons/transfer-horizontal-svgrepo-com.svg" alt="Prestamos">
+                        <span> Prestamos </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./Sidebar-options/ventas.html" target="menu_options">
+                        <img src="./assets/icons/money.svg" alt="Ventas">
                         <span> Ventas </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/wallet.svg" alt="">
-                        <span> Cartera </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/chart.svg" alt="">
+                    <a href="./Sidebar-options/informes.html" target="menu_options">
+                        <img src="./assets/icons/chart-svgrepo-com.svg" alt="Informes">
                         <span> Informes </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./assets/icons-sidebar-navbar-main/icons/tools.svg" alt="">
-                        <span> Herramientas </span>
                     </a>
                 </li>
             </ul>
@@ -92,7 +85,7 @@
     </div>
 
     <main id="main">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a ipsum tempora laudantium ipsam fuga, illo dolor reiciendis labore rerum. Fugit nostrum vitae ut facilis. Cupiditate, autem dolores. Velit, ut!
+        <iframe name="menu_options" src="./Sidebar-options/inicio.html" frameborder="0"></iframe>
     </main>
 
     <script src="./index_script.js"></script>
