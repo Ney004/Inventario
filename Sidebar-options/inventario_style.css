@@ -11,6 +11,39 @@ body{
     background-color: #ffffff;
 }
 
+/*BOTON AGREGAR*/
+.head{
+    margin: 30px 30px 0 30px;
+    border-bottom: 1px solid #dedfdf;
+}
+
+.head h2{ 
+    font-size: clamp(15px, 2.5vw, 30px);
+    color: #027b98;
+    margin: 30px 0 0 30px;
+}
+
+.head .add{
+    /*border: 1px solid black;*/
+    margin: 30px 0 20px 30px;
+    max-width: 10%;
+    padding: 10px 30px; 
+    background-color: #027b98;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.head .add img{
+    width: 1.6rem;
+}
+
+.head .add a{
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+/*TABLA*/
 .board {
     width: calc(100% - 60px); /* Resta 30px de cada lado */
     margin: 30px auto; /* Aplica margen de 30px en todos los lados y centra horizontalmente */
@@ -52,20 +85,20 @@ tbody tr td{
 .edit a{
     text-decoration: none;
     font-size: 14px;
-    color: #554cd1;
+    color: #027b98;
     font-weight: 600;
 }
 
 .description a{
     text-decoration: none;
     font-size: 14px;
-    color: #554cd1;
+    color: #027b98;
     font-weight: 600;
 }
 
 .utility a{
     text-decoration: none;
     font-size: 14px;
-    color: #554cd1;
+    color: #027b98;
     font-weight: 600;
 }
