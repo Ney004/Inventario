@@ -11,37 +11,112 @@ body{
     background-color: #ffffff;
 }
 
-/*BOTON AGREGAR*/
-.head{
+/*HERRAMIENTAS SUPERIOR*/
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 30px 30px 0 30px;
     border-bottom: 1px solid #dedfdf;
+    padding-bottom: 10px;
 }
 
-.head h2{ 
-    font-size: clamp(15px, 2.5vw, 30px);
-    color: #027b98;
-    margin: 30px 0 0 30px;
-}
-
-.head .add{
-    /*border: 1px solid black;*/
+/*BOTON AGREGAR*/
+.head .add {
     margin: 30px 0 20px 30px;
-    max-width: 10%;
-    padding: 10px 30px; 
+    max-width: 150px;
+    padding: 10px 20px;
     background-color: #027b98;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
+    gap: 10px;
+    cursor: pointer;
 }
 
 .head .add img{
     width: 1.6rem;
 }
 
-.head .add a{
+.head .add a {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
 }
+
+/*BUSCADOR*/
+.head .search {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.head .search .search-input{
+    width: 50%;
+    height: 40px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #027b98;
+    color: #000000;
+}
+
+/*HERRAMIENTAS INFERIOR*/
+.footer-tools {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center; /* Alinear elementos verticalmente */
+    margin: 20px 30px;
+    padding: 10px 0;
+    width: calc(100% - 60px); /* Ajusta el ancho */
+}
+
+/*MONSTRAR N ENTRADAS*/
+.list-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/*PAGINAS*/
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.pages ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+    margin: 0;
+}
+
+.pages li {
+    display: inline;
+}
+
+.pages span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f9fafb;
+    border: 1px solid #027b98;
+    cursor: pointer;
+    color: #027b98;
+    font-weight: 600;
+}
+
+.pages .active {
+    background-color: #027b98;
+    color: white;
+}
+
 
 /*TABLA*/
 .board {
@@ -74,6 +149,13 @@ tbody tr td{
     padding: 10px 15px;
 }
 
+.instruments a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #027b98;
+    font-weight: 600;
+}
+
 .status p{
     background-color: #d7fada;
     padding: 2px 10px;
@@ -102,3 +184,5 @@ tbody tr td{
     color: #027b98;
     font-weight: 600;
 }
+
+

@@ -158,6 +158,7 @@ iframe {
 
 .sidebar.menu-toggle{
     width: 18.75rem;
+    transform: translateX(0);
 }
 
 .sidebar a{
