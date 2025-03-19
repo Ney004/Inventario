@@ -22,6 +22,14 @@ body{
 }
 
 /*BOTON AGREGAR*/
+.head .button-add{
+    text-decoration: none;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+}
 .head .add {
     margin: 30px 0 20px 30px;
     max-width: 150px;
@@ -33,18 +41,11 @@ body{
     border-radius: 15px;
     gap: 10px;
     cursor: pointer;
+    border: none;
 }
 
 .head .add img{
     width: 1.6rem;
-}
-
-.head .add a {
-    text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-    font-weight: 600;
-    white-space: nowrap;
 }
 
 /*BUSCADOR*/
