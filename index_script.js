@@ -29,10 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //CERRAR SESION
 document.getElementById("logoutButton").addEventListener("click", function () {
-    // Eliminar datos de sesión (según cómo los guardaste)
-    localStorage.removeItem("user");  // Si guardaste el usuario en localStorage
-    sessionStorage.clear();           // También puedes limpiar sessionStorage
-    
+    google.accounts.id.disableAutoSelect(); // Evita auto-login en la próxima carga
+    localStorage.removeItem("user"); // Borrar usuario guardado
+    sessionStorage.clear();
+
     // Redirigir a la página de login
-    window.location.href = "login.html"; // Asegúrate de tener esta página
+    window.location.href = "login.html";
 });
+
+//CAPTURA DE DATOS - MOSTRAR
+window.onload = function () {
+    // Verificar si hay datos del usuario guardados en localStorage
+    const userData = localStorage.getItem("user");
+
+    if (userData) {
+        const data = JSON.parse(userData);
+
+        // Actualizar el menú con la información del usuario
+        document.querySelector(".user-info h3").textContent = data.name;
+        document.querySelector(".user-info img").src = data.picture;
+        document.querySelector(".user").src = data.picture; // También cambiar el ícono del navbar
+    }
+};
+

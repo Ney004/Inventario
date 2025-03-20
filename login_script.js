@@ -26,3 +26,25 @@ function parseJwt(token) {
 
     return JSON.parse(jsonPayload);
 }
+
+//CAPTURA DE DATOS
+function handleCredentialResponse(response) {
+    // Decodificar el token JWT para obtener la información del usuario
+    const data = JSON.parse(atob(response.credential.split(".")[1]));
+
+    // Guardar en localStorage para usarlo después en el menú
+    localStorage.setItem("user", JSON.stringify(data));
+
+    // Redirigir al menú principal
+    window.location.href = "index.html";
+}
+
+// Inicializar Google Sign-In
+window.onload = function () {
+    google.accounts.id.initialize({
+        client_id: "218301923381-dtp2ql9k479r4aouuv6ope37ntf16kse.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+
+    google.accounts.id.prompt(); // Mostrar One Tap Login si es posible
+};

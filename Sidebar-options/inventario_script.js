@@ -1,5 +1,3 @@
-
-
 //MOSTRAR N ENTRADAS
 document.addEventListener("DOMContentLoaded", function() {
     const selectEntries = document.getElementById("n-entries");
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     selectEntries.addEventListener("change", updateTableRows);
     updateTableRows(); // Llamada inicial para aplicar el valor por defecto
 });
-
 
 //PAGINACION
 document.addEventListener("DOMContentLoaded", function () {

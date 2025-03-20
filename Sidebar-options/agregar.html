@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inicio </title>
+    <link rel="stylesheet" href="./agregar_style.css">
+</head>
+<body>
+  <div class="head">
+    <h2> Agregar al Inventario </h2>
+    <p> En el caso de los equipos, unicamente es necesario llenar los campos de Nombre y Descripcion </p>
+  </div>
+
+  <div class="formbold-main-wrapper">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <div class="formbold-input-flex">
+          <div>
+            <label for="firstname" class="formbold-form-label"> Nombre </label>
+            <input type="text" name="firstname" id="firstname" class="formbold-form-input"/>
+          </div>
+          <div>
+            <label for="lastname" class="formbold-form-label"> Last name </label>
+            <input type="text" name="lastname" id="lastname" class="formbold-form-input"/>
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Mail </label>
+            <input type="email" name="email" id="email" class="formbold-form-input"/>
+          </div>
+          <div>
+            <label for="phone" class="formbold-form-label"> Phone </label>
+            <input type="text" name="phone" id="phone" class="formbold-form-input"/>
+          </div>
+        </div>
+
+        <div class="formbold-input-radio-wrapper">
+          <label for="jobtitle" class="formbold-form-label"> What are you looking for? </label>
+          <div class="formbold-radio-flex">
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Web Design
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Graphics Design
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Logo Design
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Others
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <div>
+          <label for="message" class="formbold-form-label"> Descripcion </label>
+          <textarea rows="6" name="message" id="message" class="formbold-form-input"></textarea>
+        </div>
+  
+        <button class="formbold-btn">
+          Agregar
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
