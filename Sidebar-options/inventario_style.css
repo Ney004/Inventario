@@ -150,11 +150,14 @@ tbody tr td{
     padding: 10px 15px;
 }
 
-.instruments a{
+.instruments .button{
     text-decoration: none;
     font-size: 14px;
     color: #027b98;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .status p{
@@ -165,25 +168,33 @@ tbody tr td{
     color: #2b2b2b;
 }
 
-.edit a{
+.edit .button{
     text-decoration: none;
     font-size: 14px;
     color: #027b98;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.description a{
+.description .button{
     text-decoration: none;
     font-size: 14px;
     color: #027b98;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.utility a{
+.utility .button{
     text-decoration: none;
     font-size: 14px;
     color: #027b98;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
-
 

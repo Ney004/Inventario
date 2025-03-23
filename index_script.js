@@ -30,14 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
 //CERRAR SESION
 document.getElementById("logoutButton").addEventListener("click", function () {
     google.accounts.id.disableAutoSelect(); // Evita auto-login en la próxima carga
-    localStorage.removeItem("user"); // Borrar usuario guardado
+    localStorage.removeItem("user"); // Elimina usuario guardado
     sessionStorage.clear();
 
-    // Redirigir a la página de login
-    window.location.href = "login.html";
+    // Intenta borrar caché (opcional, depende del navegador)
+    if ('caches' in window) {
+        caches.keys().then(function (names) {
+            for (let name of names) caches.delete(name);
+        });
+    }
+
+    // Reemplazar historial para que no pueda volver atrás
+    window.history.replaceState(null, null, "login.html");
+
+    // Redirigir a login
+    window.location.replace("login.html");
 });
 
-//CAPTURA DE DATOS - MOSTRAR
+//CAPTURA DE DATOS - MOSTRAR IMAGEN Y NOMBRE
 window.onload = function () {
     // Verificar si hay datos del usuario guardados en localStorage
     const userData = localStorage.getItem("user");
@@ -52,3 +62,26 @@ window.onload = function () {
     }
 };
 
+//DETECTAR CLICK FUERA DEL SIDEBAR Y EL SUBMENU
+document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("sidebar");
+    const menu = document.getElementById("menu");
+    const subMenu = document.getElementById("subMenu");
+    const userIcon = document.querySelector(".user");
+    const content = document.getElementById("content"); // Asegúrate de que el contenedor del contenido tenga este ID
+
+    // Cerrar el sidebar si el clic fue fuera de él y del botón de menú
+    if (sidebar.classList.contains("menu-toggle") && 
+        !sidebar.contains(event.target) && 
+        !menu.contains(event.target)) {
+        sidebar.classList.remove("menu-toggle");
+        menu.classList.remove("menu-toggle");
+    }
+
+    // Cerrar el submenú si el clic fue fuera de él y del icono de usuario
+    if (subMenu.classList.contains("open-menu") && 
+        !subMenu.contains(event.target) && 
+        !userIcon.contains(event.target)) {
+        subMenu.classList.remove("open-menu");
+    }
+});
