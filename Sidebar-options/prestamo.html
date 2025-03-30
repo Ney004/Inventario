@@ -4,8 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./prestamo_style.css">
 </head>
 <body>
-    formulario de prestamo
+    <div class="head">
+        <a class="button-add" href="./agregar.html">
+            <div class="add">
+                <img src="../assets/icons/transfer-horizontal-svgrepo-com_WHITE.svg">
+                Prestar
+            </div>
+        </a>
+    </div>
+
+    <section>
+        <dir class="board">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td> Nombre </td>
+                        <td> Resumen </td>
+                        <td> Solicitante </td>
+                        <td> Autoriza </td>
+                        <td> Fecha de prestamo </td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td class="name"> <p> Prueba </p> </td>
+                        <td class="instruments"> <button class="button"> Instrumentos </button> </td>
+                        <td class="class">  <p> Clasificacion </p> </td>
+                        <td class="utility"> <button class="button"> Aplicabilidad </button> </td>
+                        <td class="description"> <button class="button"> Descripcion </button> </td>
+
+                        <tr>
+                            <td class="name"> <p> Prueba </p> </td>
+                            <td class="instruments"> <button class="button"> Instrumentos </button> </td>
+                            <td class="class">  <p> Clasificacion </p> </td>
+                            <td class="utility"> <button class="button"> Aplicabilidad </button> </td>
+                            <td class="description"> <button class="button"> Descripcion </button> </td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+        </dir>
+
+        <div class="footer-tools">
+            <div class="list-items">
+                <label for="n-entries"> Mostrar </label>
+                <select name="n-entries" id="n-entries" class="n-entries">
+                    <option value="5" selected> 5 </option>
+                    <option value="10"> 10 </option>
+                    <option value="15"> 15 </option>
+                    <option value="20"> 20 </option>
+                </select>
+                entradas
+            </div>
+
+            <div class="pages">
+                <ul id="pagination">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="./prestamo_script.js"></script>
 </body>
 </html>
