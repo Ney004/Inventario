@@ -220,6 +220,10 @@ iframe {
     align-items: center;
 }
 
+.user-info h3{
+    color: var(--text-color);
+}
+
 .user-info h2{
     font-weight: 500;
 }
