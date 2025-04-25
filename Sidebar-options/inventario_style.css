@@ -198,3 +198,23 @@ tbody tr td{
     cursor: pointer;
 }
 
+/*MODALS*/
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal{
+    background-color: #ffffff;
+    border-radius: 11px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+}
