@@ -199,17 +199,27 @@ tbody tr td{
 }
 
 /*MODALS*/
-.modal-container{
+.modal-container {
     background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
+    opacity: 0;
     pointer-events: none;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
+    transition: opacity 0.4s ease;
 }
 
-.modal{
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
     background-color: #ffffff;
     border-radius: 11px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -217,4 +227,35 @@ tbody tr td{
     width: 600px;
     max-width: 100%;
     text-align: center;
+    
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.modal-container.show .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal h3{
+    color: #027b98;
+    margin-bottom: 10px;
+}
+
+.modal p{
+    margin-bottom: 10px;
+}
+
+.modal .close{
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #027b98;
+    cursor: pointer;
+    display: block;
+    margin: auto;
 }
