@@ -7,40 +7,40 @@
     <link rel="stylesheet" href="./inicio_style.css">
 </head>
 <body>
-    <div class="box">
-        
-    </div>
-    <div class="slider">
-        <div class="list">
-            <div class="item">
-                <img src="../img/Gemini_Generated_Image_1b1fo11b1fo11b1f.jpg" alt="">
+    <div class="main-wrapper">
+        <div class="slide-container">
+            <div class="slides">
+                <img src="../img/imagen_1.png" class="active">
+                <img src="../img/imagen_2.png">
+                <img src="../img/imagen_3.png">
+                <img src="../img/imagen_4.png">
+                <img src="../img/imagen_5.png">
             </div>
-            <div class="item">
-                <img src="../img/Gemini_Generated_Image_c8mcvec8mcvec8mc.jpg" alt="">
+
+            <div class="buttons">
+                <span class="next">&#10095;</span>
+                <span class="prev">&#10094;</span>
             </div>
-            <div class="item">
-                <img src="../img/Gemini_Generated_Image_i2cdegi2cdegi2cd.jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../img/Gemini_Generated_Image_zdbz92zdbz92zdbz.jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../img/Gemini_Generated_Image_lze8h7lze8h7lze8.jpg" alt="">
+
+            <div class="dotsContainer">
+                <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+                <div class="dot" attr='1' onclick="switchImage(this)"></div>
+                <div class="dot" attr='2' onclick="switchImage(this)"></div>
+                <div class="dot" attr='3' onclick="switchImage(this)"></div>
+                <div class="dot" attr='4' onclick="switchImage(this)"></div>
             </div>
         </div>
-        <div class="buttons">
-            <button id="prev"> < </button>
-            <button id="next"> > </button>
+
+        <div class="head">
+            <h3>SOBRE NOSOTROS</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis tenetur optio provident, amet cumque debitis
+                consectetur officiis odit, aut odio doloremque labore quisquam vitae ratione porro, culpa pariatur! Aspernatur,
+                consectetur?
+            </p>
         </div>
-        <ul class="dots">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
 
-    <script src="inicio_script.js"></script>
+    <script src="./inicio_script.js"></script>
 </body>
 </html>

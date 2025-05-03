@@ -1,39 +1,85 @@
-let slider = document.querySelector('.slider .list');
-let items = document.querySelectorAll('.slider .list .item');
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let dots = document.querySelectorAll('.slider .dots li');
+// Access the Images
+let slideImages = document.querySelectorAll('img');
+// Access the next and prev buttons
+let next = document.querySelector('.next');
+let prev = document.querySelector('.prev');
+// Access the indicators
+let dots = document.querySelectorAll('.dot');
 
-let lengthItems = items.length - 1;
-let active = 0;
-next.onclick = function(){
-    active = active + 1 <= lengthItems ? active + 1 : 0;
-    reloadSlider();
+var counter = 0;
+
+// Code for next button
+next.addEventListener('click', slideNext);
+function slideNext(){
+slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+if(counter >= slideImages.length-1){
+    counter = 0;
 }
-prev.onclick = function(){
-    active = active - 1 >= 0 ? active - 1 : lengthItems;
-    reloadSlider();
+else{
+    counter++;
 }
-let refreshInterval = setInterval(()=> {next.click()}, 3000);
-function reloadSlider(){
-    slider.style.left = -items[active].offsetLeft + 'px';
-    // 
-    let last_active_dot = document.querySelector('.slider .dots li.active');
-    last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
-
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(()=> {next.click()}, 3000);
-
-    
+slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+indicators();
 }
 
-dots.forEach((li, key) => {
-    li.addEventListener('click', ()=>{
-            active = key;
-            reloadSlider();
-    })
-})
-window.onresize = function(event) {
-    reloadSlider();
-};
+// Code for prev button
+prev.addEventListener('click', slidePrev);
+function slidePrev(){
+slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+if(counter == 0){
+    counter = slideImages.length-1;
+}
+else{
+    counter--;
+}
+slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+indicators();
+}
+
+// Auto slideing
+function autoSliding(){
+    deletInterval = setInterval(timer, 3000);
+    function timer(){
+        slideNext();
+        indicators();
+    }
+}
+autoSliding();
+
+// Stop auto sliding when mouse is over
+const container = document.querySelector('.slide-container');
+container.addEventListener('mouseover', function(){
+    clearInterval(deletInterval);
+});
+
+// Resume sliding when mouse is out
+container.addEventListener('mouseout', autoSliding);
+
+// Add and remove active class from the indicators
+function indicators(){
+    for(i = 0; i < dots.length; i++){
+        dots[i].className = dots[i].className.replace(' active', '');
+    }
+    dots[counter].className += ' active';
+}
+
+// Add click event to the indicator
+function switchImage(currentImage){
+    currentImage.classList.add('active');
+    var imageId = currentImage.getAttribute('attr');
+    if(imageId > counter){
+    slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+    counter = imageId;
+    slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+    }
+    else if(imageId == counter){
+        return;
+    }
+    else{
+    slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+    counter = imageId;
+    slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';	
+    }
+    indicators();
+}
+
