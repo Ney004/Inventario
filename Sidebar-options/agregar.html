@@ -16,23 +16,23 @@
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
     <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form id="formulario-agregar">
         <div class="formbold-input-flex">
           <div>
             <label for="firstname" class="formbold-form-label"> Nombre </label>
             <input type="text" name="firstname" id="firstname" class="formbold-form-input"/>
           </div>
-          <div>
-            <label for="lastname" class="formbold-form-label"> Instrumentos </label>
-            <input type="text" name="lastname" id="lastname" class="formbold-form-input"/>
-          </div>
         </div>
 
         <div class="formbold-input-flex">
-          <div>
-            <label for="email" class="formbold-form-label"> Aplicabilidad </label>
-            <input type="email" name="email" id="email" class="formbold-form-input"/>
+          <div id="instrumentosContainer">
+            <label for="lastname" class="formbold-form-label"> Instrumentos </label>
+            <input type="text" name="lastname[]" class="formbold-form-input" />
           </div>
+        </div>
+        <div>
+          <button class="instrument-btn-add" type="button" onclick="agregarInstrumento()"> Agregar Instrumento </button>
+          <button class="instrument-btn-trash" type="button" onclick="eliminarInstrumento()"> Eliminar </button>
         </div>
 
         <div class="formbold-input-radio-wrapper">
@@ -41,7 +41,7 @@
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
                 <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Web Design
+                Proyectiva
                 <span class="formbold-radio-checkmark"></span>
               </label>
             </div>
@@ -49,7 +49,7 @@
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
                 <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Graphics Design
+                Inteligencia
                 <span class="formbold-radio-checkmark"></span>
               </label>
             </div>
@@ -57,31 +57,64 @@
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
                 <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Logo Design
+                Personalidad
                 <span class="formbold-radio-checkmark"></span>
               </label>
             </div>
-  
+
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
                 <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Others
+                Clinica
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Neuropsicologica
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                Aptitud
+                <span class="formbold-radio-checkmark"></span>
+              </label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
+                No Aplica
                 <span class="formbold-radio-checkmark"></span>
               </label>
             </div>
           </div>
         </div>
   
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Aplicabilidad </label>
+            <textarea rows="3" name="message" id="message" class="formbold-form-input"></textarea>
+          </div>
+        </div>
+
         <div>
           <label for="message" class="formbold-form-label"> Descripcion </label>
           <textarea rows="6" name="message" id="message" class="formbold-form-input"></textarea>
         </div>
   
-        <button class="formbold-btn">
+        <button type="submit" class="formbold-btn" id="formbold-btn">
           Agregar
         </button>
       </form>
     </div>
   </div>
+
+  <script src="./agregar_script.js"></script>
 </body>
 </html>
