@@ -10,22 +10,22 @@
     <div class="head">
         <a class="button-add" href="./prestar.html">
             <div class="add">
-                <img src="../assets/icons/transfer-horizontal-svgrepo-com_WHITE.svg">
+                <img src="../../assets/icons/transfer-horizontal-svgrepo-com_WHITE.svg">
                 Prestar
             </div>
         </a>
     </div>
 
     <section>
-        <dir class="board">
+        <div class="board">
             <table width="100%">
                 <thead>
                     <tr>
                         <td> ID </td>
                         <td> Nombre </td>
-                        <td> Resumen </td>
+                        <td> Descripcion </td>
                         <td> Solicitante </td>
-                        <td> Autoriza </td>
+                        <td> Autorizo </td>
                         <td> Fecha de prestamo </td>
                         <td></td>
                     </tr>
@@ -35,68 +35,83 @@
                         
                         <td class="id"> 01 </td>
                         <td class="name"> <p> Prueba </p> </td>
-                        <td class="description"> <button class="button"> Resumen </button> </td>
+                        <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                         <td class="solicitud">  <p> Walter White </p> </td>
                         <td class="prestamista"> Autorizo </td>
                         <td class="date"> Fecha </td>
+                        <td class="devolucion"> <button class="button"> Entregado </button> </td>
 
                         <tr>
                             <td class="id"> 02 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
 
                         <tr>
                             <td class="id"> 03 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
 
                         <tr>
                             <td class="id"> 04 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
 
                         <tr>
                             <td class="id"> 05 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
 
                         <tr>
                             <td class="id"> 06 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
 
                         <tr>
                             <td class="id"> 07 </td>
                             <td class="name"> <p> Prueba </p> </td>
-                            <td class="description"> <button class="button"> Resumen </button> </td>
+                            <td class="description"> <button class="button open-modal-description"> Descripcion </button> </td>
                             <td class="solicitud">  <p> Walter White </p> </td>
                             <td class="prestamista"> Autorizo </td>
                             <td class="date"> Fecha </td>
+                            <td class="devolucion"> <button class="button"> Entregado </button> </td>
                         </tr>
                     </tr>
                 </tbody>
             </table>
-        </dir>
+
+            <div class="modal-container" id="modal_description">
+                <div class="modal">
+                    <h3> Descripcion </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quis beatae quos repellendus, quae animi error dolor dolorum consequatur eligendi labore accusamus, veniam reiciendis accusantium eius quo! Quas, aliquam temporibus!</p>
+                    <button class="close" id="close_description"> Cerrar </button>
+                </div>
+            </div>
+        </div>
 
         <div class="footer-tools">
             <div class="list-items">

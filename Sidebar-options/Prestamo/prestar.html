@@ -15,7 +15,7 @@
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
     <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form id="formulario-prestar">
         <div class="formbold-input-flex">
           <div>
             <label for="nombre" class="formbold-form-label"> Nombre </label>
@@ -34,7 +34,7 @@
           </div>
           <div>
             <label for="fecha" class="formbold-form-label"> Fecha de prestamo </label>
-            <input type="date" name="fecha" id="fecha" class="formbold-form-input"/>
+            <input type="datetime-local" name="fecha" id="fecha" class="formbold-form-input"/>
           </div>
         </div>
   
@@ -49,5 +49,7 @@
       </form>
     </div>
   </div>
+  
+  <script src="./prestar_script.js"></script>
 </body>
 </html>

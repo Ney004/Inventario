@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     selectEntries.addEventListener("change", updateTableRows);
-    updateTableRows(); // Llamada inicial para aplicar el valor por defecto
+    updateTableRows();
 });
 
 //PAGINACION
@@ -67,15 +67,47 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTable();
 });
 
-//MODALS
-const open = document.getElementById("open");
-const modal_container = document.getElementById("modal_container");
-const close = document.getElementById("close");
+//MODAL INSTRUMENTOS
+const openInstrument = document.querySelectorAll('.open-modal-instrument');
+const modalInstrument = document.getElementById('modal_instrument');
+const closeInstrument = document.getElementById('close_instrument');
 
-open.addEventListener("click", () => {
-    modal_container.classList.add("show");
+openInstrument.forEach(button => {
+    button.addEventListener('click', () => {
+        modalInstrument.classList.add('show');
+    });
 });
 
-close.addEventListener("click", () => {
-    modal_container.classList.remove("show");
+closeInstrument.addEventListener('click', () => {
+    modalInstrument.classList.remove('show');
+});
+
+//MODAL APLICABILIDAD
+const openUtility = document.querySelectorAll('.open-modal-utility');
+const modalUtility = document.getElementById('modal_utility');
+const closeUtility = document.getElementById('close_utility');
+
+openUtility.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalUtility.classList.add('show');
+    });
+});
+
+closeUtility.addEventListener('click', () => {
+    modalUtility.classList.remove('show');
+});
+
+//MODAL DESCRIPCION
+const openDescription = document.querySelectorAll('.open-modal-description');
+const modalDescription = document.getElementById('modal_description');
+const closeDescription = document.getElementById('close_description');
+
+openDescription.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalDescription.classList.add('show');
+    });
+});
+
+closeDescription.addEventListener('click', () => {
+    modalDescription.classList.remove('show');
 });
