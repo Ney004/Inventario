@@ -247,7 +247,7 @@ iframe {
     padding: 14px 25px;
     border: none;
     font-weight: 500;
-    background-color: var(--background-hover);
+    background-color: var(--background-color);
     cursor: pointer;
     display: block;
     margin: auto;
@@ -255,7 +255,7 @@ iframe {
 
 .sub-menu-button p{
     width: 100%;
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .sub-menu-button img{
@@ -271,7 +271,6 @@ iframe {
 
 .sub-menu-button:hover span{
     transform: translateX(5px);
-
 }
 
 .sub-menu-button:hover p{

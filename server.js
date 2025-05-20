@@ -113,35 +113,37 @@ app.post("/validar", async (req, res) => {
     }
 });
 
-app.post("/inventario/agregar", async (req, res) => {
+app.use(express.json());
+
+app.post("/instrumento", async (req, res) => {
     const { nombre, instrumentos, clasificacion, aplicabilidad, descripcion } = req.body;
 
-    if (!nombre || !instrumentos || !clasificacion || !aplicabilidad || !descripcion) {
-        return res.status(400).json({ 
-            success: false, 
-            error: "Todos los campos son obligatorios" 
-        });
-    }
+    console.log("📦 Recibido:", req.body); // Esto saldrá en terminal
 
     try {
-        const query = `
-            INSERT INTO instrumentos (nombre, instrumentos, clasificacion, aplicabilidad, descripcion)
-            VALUES ($1, $2, $3, $4, $5)
-            RETURNING *
-        `;
-        const values = [nombre, instrumentos, clasificacion, aplicabilidad, descripcion];
+        // Guarda en tabla "instrumentos"
+        const insertResult = await pool.query(
+            "INSERT INTO instrumentos (nombre, clasificacion, aplicabilidad, descripcion) VALUES ($1, $2, $3, $4) RETURNING id",
+            [nombre, clasificacion, aplicabilidad, descripcion]
+        );
 
-        const result = await pool.query(query, values);
+        const instrumentoId = insertResult.rows[0].id;
 
-        // Mostrar en terminal del servidor los datos insertados
-        console.log("Instrumento guardado en BD:", result.rows[0]);
+        // Guarda cada instrumento en una tabla "instrumento_items"
+        for (let inst of instrumentos) {
+            await pool.query(
+                "INSERT INTO instrumento_items (instrumento_id, nombre) VALUES ($1, $2)",
+                [instrumentoId, inst]
+            );
+        }
 
-        res.json({ success: true, data: result.rows[0] });
-    } catch (error) {
-        console.error("Error guardando instrumento:", error);
-        res.status(500).json({ success: false, error: "Error guardando instrumento en BD" });
+        res.json({ success: true });
+    } catch (err) {
+        console.error("❌ Error al insertar en la DB:", err);
+        res.status(500).json({ success: false });
     }
 });
+
 
 
 // === INICIAR SERVIDOR ===

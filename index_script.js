@@ -77,41 +77,5 @@ document.addEventListener("DOMContentLoaded", function () {
             subMenu.classList.remove("open-menu");
         }
     });
-
-    // ==== ENVÍO DE FORMULARIO DE INSTRUMENTOS ====
-    const form = document.getElementById("form-instrumento");
-
-    document.getElementById("instrument-form").addEventListener("submit", async function (event) {
-        event.preventDefault();
-    
-        const formData = new FormData(this);
-        const data = {
-            nombre: formData.get("nombre"),
-            instrumentos: formData.get("instrumentos"),
-            clasificacion: formData.get("clasificacion"),
-            aplicabilidad: formData.get("aplicabilidad"),
-            descripcion: formData.get("descripcion"),
-        };
-    
-        try {
-            const response = await fetch("http://localhost:3000/inventario/agregar", { 
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-    
-            const result = await response.json();
-    
-            if (result.success) {
-                alert("✅ Instrumento guardado correctamente");
-                this.reset(); // Limpia el formulario tras enviar
-            } else {
-                alert("❌ Error al guardar el instrumento: " + (result.error || "Inténtalo de nuevo."));
-            }
-        } catch (error) {
-            console.error("Error enviando instrumento:", error);
-            alert("Error de red o del servidor.");
-        }
-    });
     
 });
