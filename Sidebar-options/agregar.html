@@ -1,116 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Inicio </title>
-    <link rel="stylesheet" href="./agregar_style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio</title>
+  <link rel="stylesheet" href="./agregar_style.css" />
 </head>
 <body>
   <div class="head">
-    <h2> Agregar al Inventario </h2>
-    <p> En el caso de los equipos, unicamente es necesario llenar los campos de Nombre y Descripcion </p>
+    <h2>Agregar al Inventario</h2>
+    <p>En el caso de los equipos, únicamente es necesario llenar los campos de Nombre y Descripción</p>
   </div>
 
   <div class="formbold-main-wrapper">
-    <!-- Author: FormBold Team -->
-    <!-- Learn More: https://formbold.com -->
     <div class="formbold-form-wrapper">
       <form id="formulario-agregar">
         <div class="formbold-input-flex">
           <div>
-            <label for="firstname" class="formbold-form-label"> Nombre </label>
-            <input type="text" name="firstname" id="firstname" class="formbold-form-input"/>
+            <label for="firstname" class="formbold-form-label">Nombre</label>
+            <input type="text" name="firstname" id="firstname" class="formbold-form-input" />
           </div>
         </div>
 
         <div class="formbold-input-flex">
           <div id="instrumentosContainer">
-            <label for="lastname" class="formbold-form-label"> Instrumentos </label>
-            <input type="text" name="lastname[]" class="formbold-form-input" />
+            <label for="instrumento-1" class="formbold-form-label">Instrumentos</label>
+            <input type="text" name="lastname[]" id="instrumento-1" class="formbold-form-input" />
           </div>
         </div>
         <div>
-          <button class="instrument-btn-add" type="button" onclick="agregarInstrumento()"> Agregar Instrumento </button>
-          <button class="instrument-btn-trash" type="button" onclick="eliminarInstrumento()"> Eliminar </button>
+          <button class="instrument-btn-add" type="button" onclick="agregarInstrumento()">Agregar Instrumento</button>
+          <button class="instrument-btn-trash" type="button" onclick="eliminarInstrumento()">Eliminar</button>
         </div>
 
         <div class="formbold-input-radio-wrapper">
           <label for="jobtitle" class="formbold-form-label"> Clasificacion </label>
-          <div class="formbold-radio-flex">
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Proyectiva
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-  
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Inteligencia
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-  
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Personalidad
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Clinica
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Neuropsicologica
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                Aptitud
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                No Aplica
-                <span class="formbold-radio-checkmark"></span>
-              </label>
-            </div>
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="proyectiva" value="Proyectiva">
+              Proyectiva
+              <span class="formbold-radio-checkmark"></span>
+            </label>
           </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="inteligencia" value="Inteligencia">
+              Inteligencia
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="personalidad" value="Personalidad">
+              Personalidad
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="clinica" value="Clinica">
+              Clinica
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="neuropsicologica" value="Neuropsicologica">
+              Neuropsicologica
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="aptitud" value="Aptitud">
+              Aptitud
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input class="formbold-input-radio" type="radio" name="clasificacion" id="noaplica" value="No Aplica">
+              No Aplica
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>          
         </div>
-  
+
         <div class="formbold-input-flex">
           <div>
-            <label for="email" class="formbold-form-label"> Aplicabilidad </label>
-            <textarea rows="3" name="message" id="message" class="formbold-form-input"></textarea>
+            <label for="aplicabilidad" class="formbold-form-label">Aplicabilidad</label>
+            <textarea rows="3" name="aplicabilidad" id="aplicabilidad" class="formbold-form-input"></textarea>
           </div>
         </div>
 
         <div>
-          <label for="message" class="formbold-form-label"> Descripcion </label>
-          <textarea rows="6" name="message" id="message" class="formbold-form-input"></textarea>
+          <label for="descripcion" class="formbold-form-label">Descripción</label>
+          <textarea rows="6" name="descripcion" id="descripcion" class="formbold-form-input"></textarea>
         </div>
-  
-        <button type="submit" class="formbold-btn" id="formbold-btn">
-          Agregar
-        </button>
+
+        <button type="submit" class="formbold-btn" id="formbold-btn">Agregar</button>
       </form>
     </div>
   </div>

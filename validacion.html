@@ -8,8 +8,6 @@
 </head>
 <body>
     <div class="formbold-main-wrapper">
-        <!-- Author: FormBold Team -->
-        <!-- Learn More: https://formbold.com -->
         <div class="background"></div>
         <div class="formbold-form-wrapper">
             <form id="validation-form">
@@ -35,16 +33,17 @@
                         <label for="typedocument" class="formbold-form-label">
                             Tipo de documento
                         </label>
-                        <select type="text" name="typedocument" id="typedocument" class="formbold-form-input" required>
-                            <option value=""></option>
-                            <option value="">Registro Civil</option>
-                            <option value="">Tarjeta de Identidad</option>
-                            <option value="">Cedula de Ciudadanía</option>
-                            <option value="">Tarjeta de Extranjería</option>
-                            <option value="">Cédula de Extranjería</option>
-                            <option value="">Número de Identificación Tributaria</option>
+                        <select name="typedocument" id="typedocument" class="formbold-form-input" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Registro Civil">Registro Civil</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Cedula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Extranjería">Tarjeta de Extranjería</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="Número de Identificación Tributaria">Número de Identificación Tributaria</option>
                         </select>
-                    </div>
+                        
+                    </div>          
                     <div>
                         <label for="id" class="formbold-form-label">
                             Documento
@@ -64,9 +63,9 @@
                             Ocupación
                         </label>
                         <select type="text" name="occupation" id="occupation" class="formbold-form-input" required>
-                            <option value=""></option>
-                            <option value="">Coordinador/a</option>
-                            <option value="">Practicante</option>
+                            <option value="">Seleccione...</option>
+                            <option value="Coordinador">Coordinador</option>
+                            <option value="Practicante">Practicante</option>
                         </select>
                     </div>
                 </div>
@@ -85,14 +84,19 @@
                                 </span>
                             </div>
                         </div>
-                        Aceptar
-                        <a href="#"> Terminos y Condiciones</a>
+                        I agree to the defined
+                        <a href="#"> terms, conditions, and policies</a>
                     </label>
                 </div>
                 <button class="formbold-btn">Registrar</button>
             </form>
         </div>
     </div>
-    <script src="./validacion_script.js"></script>
+    <script src="./validacion_script.js" defer></script>
+    <script>
+        function toggleSubmitButton() {
+            document.getElementById("submitBtn").disabled = !document.getElementById("supportCheckbox").checked;
+        }
+    </script>
 </body>
 </html>

@@ -1,23 +1,25 @@
-//MENU
-const menu = document.getElementById('menu');
-const sidebar = document.getElementById('sidebar');
-const main = document.getElementById('main');
-
-menu.addEventListener('click',()=>{
-    sidebar.classList.toggle('menu-toggle');
-    menu.classList.toggle('menu-toggle');
-    main.classList.toggle('main');
-});
-
-//SUBMENU
-let subMenu = document.getElementById("subMenu");
-
-function toggleMenu(){
-    subMenu.classList.toggle("open-menu");
-}
-
-//.selected
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
+    // ==== MENÚ LATERAL ====
+    const menu = document.getElementById('menu');
+    const sidebar = document.getElementById('sidebar');
+    const main = document.getElementById('main');
+
+    menu.addEventListener('click', () => {
+        sidebar.classList.toggle('menu-toggle');
+        menu.classList.toggle('menu-toggle');
+        main.classList.toggle('main');
+    });
+
+    // ==== SUBMENÚ DEL USUARIO ====
+    const subMenu = document.getElementById("subMenu");
+
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+    window.toggleMenu = toggleMenu; // Si se usa desde el HTML
+
+    // Marcar la opción seleccionada en la barra lateral
     const sidebarLinks = document.querySelectorAll(".sidebar a");
     sidebarLinks.forEach(link => {
         link.addEventListener("click", function () {
@@ -25,63 +27,91 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("selected");
         });
     });
-});
 
-//CERRAR SESION
-document.getElementById("logoutButton").addEventListener("click", function () {
-    google.accounts.id.disableAutoSelect(); // Evita auto-login en la próxima carga
-    localStorage.removeItem("user"); // Elimina usuario guardado
-    sessionStorage.clear();
+    // ==== CERRAR SESIÓN ====
+    document.getElementById("logoutButton")?.addEventListener("click", function () {
+        google.accounts.id.disableAutoSelect();
+        localStorage.removeItem("user");
+        sessionStorage.clear();
 
-    // Intenta borrar caché (opcional, depende del navegador)
-    if ('caches' in window) {
-        caches.keys().then(function (names) {
-            for (let name of names) caches.delete(name);
-        });
-    }
+        if ('caches' in window) {
+            caches.keys().then(function (names) {
+                for (let name of names) caches.delete(name);
+            });
+        }
 
-    // Reemplazar historial para que no pueda volver atrás
-    window.history.replaceState(null, null, "login.html");
+        window.history.replaceState(null, null, "login.html");
+        window.location.replace("login.html");
+    });
 
-    // Redirigir a login
-    window.location.replace("login.html");
-});
-
-//CAPTURA DE DATOS - MOSTRAR IMAGEN Y NOMBRE
-window.onload = function () {
-    // Verificar si hay datos del usuario guardados en localStorage
+    // ==== MOSTRAR INFO DE USUARIO ====
     const userData = localStorage.getItem("user");
 
-    if (userData) {
+    if (!userData) {
+        window.location.replace("login.html");
+    } else {
         const data = JSON.parse(userData);
+        mostrarUsuario(data);
+    }
 
-        // Actualizar el menú con la información del usuario
+    function mostrarUsuario(data) {
         document.querySelector(".user-info h3").textContent = data.name;
         document.querySelector(".user-info img").src = data.picture;
-        document.querySelector(".user").src = data.picture; // También cambiar el ícono del navbar
-    }
-};
-
-//DETECTAR CLICK FUERA DEL SIDEBAR Y EL SUBMENU
-document.addEventListener("click", function (event) {
-    const sidebar = document.getElementById("sidebar");
-    const menu = document.getElementById("menu");
-    const subMenu = document.getElementById("subMenu");
-    const userIcon = document.querySelector(".user");
-    const content = document.getElementById("content"); // Asegúrate de que el contenedor del contenido tenga este ID
-
-    // Cerrar el sidebar si el clic fue fuera de él y del botón de menú
-    if (sidebar.classList.contains("menu-toggle") && 
-        !sidebar.contains(event.target) && 
-        !menu.contains(event.target)) {
-        sidebar.classList.remove("menu-toggle");
-        menu.classList.remove("menu-toggle");
+        document.querySelector(".user").src = data.picture;
     }
 
-    // Cerrar el submenú si el clic fue fuera de él y del icono de usuario
-    if (subMenu.classList.contains("open-menu") && 
-        !subMenu.contains(event.target) && 
-        !userIcon.contains(event.target)) {
-        subMenu.classList.remove("open-menu");
-    }
+    // ==== DETECTAR CLIC FUERA DEL SIDEBAR Y SUBMENÚ ====
+    document.addEventListener("click", function (event) {
+        const userIcon = document.querySelector(".user");
+
+        if (sidebar.classList.contains("menu-toggle") &&
+            !sidebar.contains(event.target) &&
+            !menu.contains(event.target)) {
+            sidebar.classList.remove("menu-toggle");
+            menu.classList.remove("menu-toggle");
+        }
+
+        if (subMenu.classList.contains("open-menu") &&
+            !subMenu.contains(event.target) &&
+            !userIcon.contains(event.target)) {
+            subMenu.classList.remove("open-menu");
+        }
+    });
+
+    // ==== ENVÍO DE FORMULARIO DE INSTRUMENTOS ====
+    const form = document.getElementById("form-instrumento");
+
+    document.getElementById("instrument-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+    
+        const formData = new FormData(this);
+        const data = {
+            nombre: formData.get("nombre"),
+            instrumentos: formData.get("instrumentos"),
+            clasificacion: formData.get("clasificacion"),
+            aplicabilidad: formData.get("aplicabilidad"),
+            descripcion: formData.get("descripcion"),
+        };
+    
+        try {
+            const response = await fetch("http://localhost:3000/inventario/agregar", { 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+    
+            const result = await response.json();
+    
+            if (result.success) {
+                alert("✅ Instrumento guardado correctamente");
+                this.reset(); // Limpia el formulario tras enviar
+            } else {
+                alert("❌ Error al guardar el instrumento: " + (result.error || "Inténtalo de nuevo."));
+            }
+        } catch (error) {
+            console.error("Error enviando instrumento:", error);
+            alert("Error de red o del servidor.");
+        }
+    });
+    
 });

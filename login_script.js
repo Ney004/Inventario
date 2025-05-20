@@ -1,50 +1,88 @@
-function handleCredentialResponse(response) {
-    console.log("ID Token:", response.credential);
-    // Decodificar el ID Token de Google para obtener el usuario
-    const user = parseJwt(response.credential);
-    const userId = user.sub; // El ID único del usuario (sub es el ID en Google)
-    
-    // Verifica si el usuario ya ha iniciado sesión previamente
-    if (!localStorage.getItem(`hasLoggedInBefore_${userId}`)) {
-        // Si no ha iniciado sesión antes, redirige al usuario a validacion.html
-        window.location.href = "validacion.html";
-        // Marca al usuario como que ya inició sesión y guarda la información en localStorage
-        localStorage.setItem(`hasLoggedInBefore_${userId}`, 'true');
-    } else {
-        // Si ya inició sesión antes, redirige directamente al index.html
-        window.location.href = "index.html";
-    }
-}
+function loginExitoso(name, email, picture) {
+    const user = {
+        name: name,
+        email: email,
+        picture: picture || "./assets/Avatar.png"
+    };
 
-// Función para decodificar el ID Token de Google y obtener los datos del usuario
-function parseJwt(token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
+    // Guardar la información del usuario en el localStorage
+    localStorage.setItem("user", JSON.stringify(user));
 
-    return JSON.parse(jsonPayload);
-}
-
-//CAPTURA DE DATOS
-function handleCredentialResponse(response) {
-    // Decodificar el token JWT para obtener la información del usuario
-    const data = JSON.parse(atob(response.credential.split(".")[1]));
-
-    // Guardar en localStorage para usarlo después en el menú
-    localStorage.setItem("user", JSON.stringify(data));
-
-    // Redirigir al menú principal
+    // Redirigir al index.html
     window.location.href = "index.html";
 }
 
-// Inicializar Google Sign-In
-window.onload = function () {
+function handleCredentialResponse(response) {
+    console.log("ID Token:", response.credential);
+
+    // Decodificar el token de Google
+    const user = parseJwt(response.credential);
+    const userData = {
+        google_id: user.sub, 
+        name: user.name,
+        email: user.email,
+        picture: user.picture || "./assets/Avatar.png"  // Asegúrate de incluir la imagen
+    };
+
+    console.log("Usuario autenticado:", userData);
+
+    // Enviar los datos al backend para guardarlos en PostgreSQL
+    fetch('http://localhost:3000/auth/google', {  
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ credential: response.credential })  
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+
+        if (data.google_id) {
+            // Guardar el google_id en localStorage
+            localStorage.setItem("google_id", data.google_id);
+
+            // Guardar también la información completa del usuario que se espera en index.js
+            const userForFrontend = {
+                name: user.name,
+                email: user.email,
+                picture: user.picture || "./assets/Avatar.png"
+            };
+
+            // Guardar la información del usuario para ser usada en index.js
+            localStorage.setItem("user", JSON.stringify(userForFrontend));
+
+            console.log("Usuario guardado:", userForFrontend);
+
+            // Redirigir a la página principal (index.html)
+            window.location.href = "index.html";  // Asegúrate de redirigir al index.html correctamente
+        } else {
+            console.error("Error en autenticación:", data.error);
+            alert("Error al autenticar con Google.");
+        }
+    })
+    .catch(error => {
+        console.error('Error en la autenticación:', error);
+        alert("Hubo un problema con la autenticación.");
+    });
+}
+
+// Función para decodificar el ID Token de Google
+function parseJwt(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    return JSON.parse(atob(base64));
+}
+
+// Inicialización de Google One Tap
+document.addEventListener("DOMContentLoaded", () => {
     google.accounts.id.initialize({
         client_id: "218301923381-dtp2ql9k479r4aouuv6ope37ntf16kse.apps.googleusercontent.com",
         callback: handleCredentialResponse
     });
 
-    google.accounts.id.prompt(); // Mostrar One Tap Login si es posible
-};
+    google.accounts.id.renderButton(
+        document.getElementById("google-login-btn"),
+        { theme: "outline", size: "large" }
+    );
+});
