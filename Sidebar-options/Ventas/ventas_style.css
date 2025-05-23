@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+/*HERRAMIENTAS SUPERIOR*/
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 30px 0 30px;
+    border-bottom: 1px solid #dedfdf;
+    padding-bottom: 10px;
+}
+
+/*BOTON AGREGAR*/
+.head .button-add{
+    text-decoration: none;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.head .add {
+    margin: 30px 0 20px 30px;
+    max-width: 150px;
+    padding: 10px 20px;
+    background-color: #027b98;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.head .add img{
+    width: 1.6rem;
+}
+
+/*HERRAMIENTAS INFERIOR*/
+.footer-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px;
+    padding: 10px 0;
+    width: calc(100% - 60px);
+}
+
+/*MONSTRAR N ENTRADAS*/
+.list-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/*PAGINAS*/
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.pages ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+    margin: 0;
+}
+
+.pages li {
+    display: inline;
+}
+
+.pages span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f9fafb;
+    border: 1px solid #027b98;
+    cursor: pointer;
+    color: #027b98;
+    font-weight: 600;
+}
+
+.pages .active {
+    background-color: #027b98;
+    color: white;
+}
+
+/*TABLA*/
+.board {
+    width: calc(100% - 60px); /* Resta 30px de cada lado */
+    margin: 30px auto; /* Aplica margen de 30px en todos los lados y centra horizontalmente */
+    overflow: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 11px #dedfdf;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+tr{
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead td{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: #f9fafb;
+    text-align: start;
+    padding: 15px;
+}
+
+tbody tr td{
+    padding: 10px 15px;
+}
+
+.description .button{
+    text-decoration: none;
+    font-size: 14px;
+    color: #027b98;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.devolucion .button{
+    text-decoration: none;
+    font-size: 14px;
+    color: #027b98;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*
+.devolucion{
+    max-width: 150px;
+    padding: 3px 20px;
+    background-color: #027a98;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.devolucion span{
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+
+.devolucion:hover span{
+    transform: translateX(5px);
+}
+*/
+
+
+/*MODAL*/
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.4s ease;
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #ffffff;
+    border-radius: 11px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+    
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.modal-container.show .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal h3{
+    color: #027b98;
+    margin-bottom: 10px;
+}
+
+.modal p{
+    margin-bottom: 10px;
+}
+
+.modal .close{
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #027b98;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}

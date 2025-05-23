@@ -7,40 +7,133 @@
     <link rel="stylesheet" href="./inicio_style.css">
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="slide-container">
-            <div class="slides">
-                <img src="../../img/imagen_1.png" class="active">
-                <img src="../../img/imagen_2.png">
-                <img src="../../img/imagen_3.png">
-                <img src="../../img/imagen_4.png">
-                <img src="../../img/imagen_5.png">
+    <header id="inicio">
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#acerca-de">Acerca de</a>
+            <!-- <a href="#">Portafolio</a> -->
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#inicio" class="boton-inicio" title="Volver al inicio">⬆</a>
+        </nav>
+        <section class="textos-header" >
+            <h1>Laboratorio Psicológico</h1>
+            <h2>Universidad Católica Luis Amigo</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section class="contenedor sobre-nosotros" id="acerca-de">
+            <h2 class="titulo"> ... </h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="../../img/undraw_idea_hz8b.svg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span> ... </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt veniam eius aspernatur ad
+                        consequuntur aperiam minima sed dicta odit numquam sapiente quam eum, architecto animi pariatur,
+                        velit doloribus laboriosam ut.</p>
+                    <h3><span>2</span> ... </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt veniam eius aspernatur ad
+                        consequuntur aperiam minima sed dicta odit numquam sapiente quam eum, architecto animi pariatur,
+                        velit doloribus laboriosam ut.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="buttons">
-                <span class="next">&#10095;</span>
-                <span class="prev">&#10094;</span>
+        <!--
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../img/imagen_1.png" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="../../img/imagen_2.png" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img3.jpg" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img1.jpg" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img4.jpg" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img5.jpg" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img6.jpg" alt="">
+                        
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img7.jpg" alt="">
+                        
+                    </div>
+                </div>
             </div>
+        </section> -->
 
-            <div class="dotsContainer">
-                <div class="dot active" attr='0' onclick="switchImage(this)"></div>
-                <div class="dot" attr='1' onclick="switchImage(this)"></div>
-                <div class="dot" attr='2' onclick="switchImage(this)"></div>
-                <div class="dot" attr='3' onclick="switchImage(this)"></div>
-                <div class="dot" attr='4' onclick="switchImage(this)"></div>
+        <section class="clientes contenedor" id="clientes">
+            <h2 class="titulo"> ... </h2>
+            <div class="cards">
+                <div class="card">
+                    
+                    <div class="contenido-texto-card">
+                        <h4>Name</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veniam soluta rem hic dolorum quibusdam pariatur deserunt corporis. Facere nobis similique suscipit id fugit delectus iste sed fugiat qui sint.</p>
+                    </div>
+        </section>
+        <section class="about-services" id="servicios">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion1.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, qui?</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion4.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, qui?</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion3.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, qui?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contacto">
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4> ... </h4>
+                <p> ... </p>
+            </div>
+            <div class="content-foo">
+                <h4> Email </h4>
+                <p> ... </p>
+            </div>
+            <div class="content-foo">
+                <h4> ... </h4>
+                <p>8296312</p>
             </div>
         </div>
-
-        <div class="head">
-            <h3>SOBRE NOSOTROS</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis tenetur optio provident, amet cumque debitis
-                consectetur officiis odit, aut odio doloremque labore quisquam vitae ratione porro, culpa pariatur! Aspernatur,
-                consectetur?
-            </p>
-        </div>
-    </div>
-
-    <script src="./inicio_script.js"></script>
+        <h2 class="titulo-final">&copy; Universidad Católica Luis Amigo </h2>
+    </footer>
 </body>
 </html>

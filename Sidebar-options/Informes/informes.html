@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Informes </title>
+    <link rel="stylesheet" href="./informes_style.css">
 </head>
 <body>
-    Aqui va la pestaña de Informes
+    <div class="head">
+        Informes
+    </div>
+    
+    <div class="content">
+        <label for="typedocument" class="formbold-form-label">
+            Tipo de Informe
+        </label>
+        <select type="text" name="typedocument" id="typedocument" class="formbold-form-input" required>
+            <option value=""></option>
+            <option value="">Inventario</option>
+            <option value="">Reporte de Ventas</option>
+        </select>
+    </div>
+
+    <div class="button">
+        <a class="button-add" href="./prestar.html">
+            <div class="add">
+
+                Descargar
+            </div>
+        </a>
+    </div>
+
 </body>
 </html>

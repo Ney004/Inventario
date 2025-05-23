@@ -4,8 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ventas </title>
+    <link rel="stylesheet" href="./ventas_style.css">
 </head>
 <body>
-    Aqui va la pestaña de ventas
+    <div class="head">
+        <a class="button-add" href="./prestar.html">
+            <div class="add">
+                <img src="../../assets/icons/plus-large-svgrepo-com.svg">
+                Agregar
+            </div>
+        </a>
+    </div>
+
+    <section>
+        <div class="board">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td> ID </td>
+                        <td> Nombre </td>
+                        <td> Cantidades </td>
+                        <td> Precio </td>
+                        <td> Total </td>
+                        <td> Detalles </td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+
+                        <tr>
+                            <td class="id"> 01 </td>
+                        <td class="name"> <p> Producto </p> </td>
+                        <td class="solicitud">  <p> 001 </p> </td>
+                        <td class="prestamista"> $10000 </td>
+                        <td class="date"> $10000 </td>
+                        <td class="description"> <button class="button open-modal-description"> Detalles </button> </td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="modal-container" id="modal_description">
+                <div class="modal">
+                    <h3> Descripcion </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quis beatae quos repellendus, quae animi error dolor dolorum consequatur eligendi labore accusamus, veniam reiciendis accusantium eius quo! Quas, aliquam temporibus!</p>
+                    <button class="close" id="close_description"> Cerrar </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-tools">
+            <div class="list-items">
+                <label for="n-entries"> Mostrar </label>
+                <select name="n-entries" id="n-entries" class="n-entries">
+                    <option value="5" selected> 5 </option>
+                    <option value="10"> 10 </option>
+                    <option value="15"> 15 </option>
+                    <option value="20"> 20 </option>
+                </select>
+                entradas
+            </div>
+
+            <div class="pages">
+                <ul id="pagination">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="./ventas_script.js"></script>
 </body>
 </html>
