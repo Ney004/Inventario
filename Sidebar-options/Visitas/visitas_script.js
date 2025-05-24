@@ -66,3 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateTable();
 });
+
+//MODAL DESCRIPCION
+
+const openDescription = document.querySelectorAll('.open-modal-description');
+const modalDescription = document.getElementById('modal_description');
+const closeDescription = document.getElementById('close_description');
+
+openDescription.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalDescription.classList.add('show');
+    });
+});
+
+closeDescription.addEventListener('click', () => {
+    modalDescription.classList.remove('show');
+});
