@@ -142,16 +142,6 @@ tbody tr td{
     cursor: pointer;
 }
 
-.devolucion .button{
-    text-decoration: none;
-    font-size: 14px;
-    color: #027b98;
-    font-weight: 600;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
 /*
 .devolucion{
     max-width: 150px;
@@ -176,7 +166,6 @@ tbody tr td{
     transform: translateX(5px);
 }
 */
-
 
 /*MODAL*/
 .modal-container {

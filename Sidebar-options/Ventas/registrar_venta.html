@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+    <link rel="stylesheet" href="./registrar_venta_style.css">
+</head>
+<body>
+    <div class="head">
+        <h2> Registro de Venta </h2>
+        <p>Para el caso de los servicios, en el campo de cantidad, se debe colocar 1</p>
+    </div>
+
+    <div class="form-container">
+        <form id="formulario-venta">
+            <label for="nombre"> Producto o servicio: </label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required min="1">
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required>
+
+            <label for="total">Total:</label>
+            <input type="text" id="total" name="total" readonly>
+
+            <label for="detalles">Detalles de compra:</label>
+            <textarea id="detalles" name="detalles" required></textarea>
+
+            <button type="submit"> Registrar </button>
+        </form>
+    </div>
+
+    <script src="./registrar_venta_script.js"></script>
+</body>
+</html>
